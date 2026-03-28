@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dn4atce4qisg"]
+
+[ext_resource type="PackedScene" uid="uid://bkso5o288e3hl" path="res://niveles/lvl3/espacio_lvl3.tscn" id="1_u4ydn"]
+[ext_resource type="PackedScene" uid="uid://cp0gncmr6k0x" path="res://personajes/steve.tscn" id="2_w75py"]
+
+[node name="nivel 1" type="Node2D" unique_id=733802760]
+
+[node name="espacio" parent="." unique_id=1345446330 instance=ExtResource("1_u4ydn")]
+
+[node name="mario" parent="." unique_id=124790534 instance=ExtResource("2_w75py")]

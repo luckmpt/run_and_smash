@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://bkv761aehknyo"]
+
+[ext_resource type="Texture2D" uid="uid://7waq00doma6k" path="res://recursos/texturas/fondo.jpg" id="1_uypw3"]
+[ext_resource type="Texture2D" uid="uid://bj6q5txom358h" path="res://recursos/texturas/bandera.png" id="2_cox3b"]
+[ext_resource type="Texture2D" uid="uid://hdx7o2wb7ixv" path="res://recursos/texturas/suelo.jpg" id="2_tq4ff"]
+[ext_resource type="Texture2D" uid="uid://dbwgdt53grqm4" path="res://recursos/texturas/blanco.jpg" id="3_71ac5"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cox3b"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_71ac5"]
+normal = Vector2(-1, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ol26f"]
+size = Vector2(4325.5, 245.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uypw3"]
+size = Vector2(966.5, 169)
+
+[node name="EspacioLvl2" type="Node2D" unique_id=33575575]
+
+[node name="Fondo2" type="Sprite2D" parent="." unique_id=1638904798]
+position = Vector2(261, -451)
+texture = ExtResource("1_uypw3")
+
+[node name="Fondo" type="Sprite2D" parent="Fondo2" unique_id=1918525496]
+position = Vector2(1919, 0)
+texture = ExtResource("1_uypw3")
+
+[node name="Fondo" type="Sprite2D" parent="Fondo2/Fondo" unique_id=1248917305]
+position = Vector2(1910, 0)
+texture = ExtResource("1_uypw3")
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=1944762549]
+position = Vector2(264, -200)
+texture = ExtResource("1_uypw3")
+
+[node name="Fondo" type="Sprite2D" parent="Fondo" unique_id=904488249]
+position = Vector2(1919, 0)
+texture = ExtResource("1_uypw3")
+
+[node name="Fondo" type="Sprite2D" parent="Fondo/Fondo" unique_id=135650624]
+position = Vector2(1910, 0)
+texture = ExtResource("1_uypw3")
+
+[node name="Bandera" type="Sprite2D" parent="." unique_id=1050469740]
+position = Vector2(3965.0002, -211)
+scale = Vector2(0.27929673, 0.25390625)
+texture = ExtResource("2_cox3b")
+
+[node name="mastil" type="Sprite2D" parent="Bandera" unique_id=115674830]
+position = Vector2(-214.82617, 311.13837)
+scale = Vector2(0.07231806, 6.050808)
+texture = ExtResource("3_71ac5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1885114160]
+
+[node name="borde_izquierdo" type="CollisionShape2D" parent="StaticBody2D" unique_id=449812036]
+shape = SubResource("WorldBoundaryShape2D_cox3b")
+
+[node name="borde derecho" type="CollisionShape2D" parent="StaticBody2D" unique_id=224879671]
+position = Vector2(4138, -1)
+shape = SubResource("WorldBoundaryShape2D_71ac5")
+
+[node name="suelo" type="CollisionShape2D" parent="StaticBody2D" unique_id=488848569]
+position = Vector2(2162.25, 122)
+shape = SubResource("RectangleShape2D_ol26f")
+
+[node name="monte" type="CollisionShape2D" parent="StaticBody2D" unique_id=465368607]
+position = Vector2(1718.75, -84.5)
+shape = SubResource("RectangleShape2D_uypw3")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1986396585]
+position = Vector2(-569, 122)
+scale = Vector2(0.22718519, 0.227)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D" unique_id=152969475]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D" unique_id=744861917]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D" unique_id=1776337894]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=177854591]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=2031727351]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=1713887477]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=1363253302]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=2125154020]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=1230705725]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=1844243026]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=969757153]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=1638254834]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=408093913]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=1042057585]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=324142533]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=871995869]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=1473059125]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=2138067669]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=616549779]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=1360496036]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=872825375]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=1577178864]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D/Sprite2D" unique_id=1281079615]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D" unique_id=1152664934]
+position = Vector2(1357, -47)
+scale = Vector2(0.22718519, 0.227)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D2" unique_id=1883218722]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D2/Sprite2D" unique_id=568344823]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/Sprite2D2/Sprite2D/Sprite2D" unique_id=1756166217]
+position = Vector2(1065.21, 0)
+texture = ExtResource("2_tq4ff")

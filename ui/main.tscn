@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://dvdwa466ohr1f"]
+
+[ext_resource type="Script" uid="uid://dn5fdwc5m8jiv" path="res://ui/main.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://7waq00doma6k" path="res://recursos/texturas/fondo.jpg" id="1_ig7tw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(18.610441, 18.892157, 0, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+shadow_color = Color(0, 0, 0, 0.53333336)
+
+[node name="Main" type="Node2D" unique_id=1672704152]
+script = ExtResource("1_h2yge")
+
+[node name="Fondo" type="Sprite2D" parent="." unique_id=2002873860]
+position = Vector2(574, 324.25)
+scale = Vector2(0.59791666, 0.73050857)
+texture = ExtResource("1_ig7tw")
+
+[node name="Panel" type="Panel" parent="Fondo" unique_id=1612718548]
+offset_left = -759.3031
+offset_top = -372.68555
+offset_right = 744.25073
+offset_bottom = 348.7296
+
+[node name="Label" type="Label" parent="Fondo/Panel" unique_id=37236742]
+layout_mode = 0
+offset_left = 299.3728
+offset_top = 46.54288
+offset_right = 1203.3728
+offset_bottom = 251.54288
+theme_override_font_sizes/font_size = 113
+text = "MINECRAFT
+RUN"
+horizontal_alignment = 1
+
+[node name="Button1" type="Button" parent="Fondo/Panel" unique_id=1692497882]
+layout_mode = 0
+offset_left = 282.64807
+offset_top = 455.84674
+offset_right = 463.27527
+offset_bottom = 583.1554
+theme_override_font_sizes/font_size = 91
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yge")
+text = "1"
+
+[node name="Button2" type="Button" parent="Fondo/Panel" unique_id=1266307913]
+layout_mode = 0
+offset_left = 668.98944
+offset_top = 458.58456
+offset_right = 849.61664
+offset_bottom = 585.8933
+theme_override_font_sizes/font_size = 86
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yge")
+text = "2"
+
+[node name="Button3" type="Button" parent="Fondo/Panel" unique_id=1684420261]
+layout_mode = 0
+offset_left = 1050.3136
+offset_top = 461.32242
+offset_right = 1230.9408
+offset_bottom = 588.63104
+theme_override_font_sizes/font_size = 86
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yge")
+text = "3"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=160995826]
+anchors_preset = -1
+anchor_right = 0.72700006
+anchor_bottom = 0.83000004
+offset_left = 350.0
+offset_top = 288.0
+offset_right = 851.0
+offset_bottom = 362.0
+theme_override_colors/default_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/normal_font_size = 49
+text = "Seleccione el Nivel"
