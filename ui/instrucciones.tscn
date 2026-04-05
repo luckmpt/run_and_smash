@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c6fubklstogc7"]
+
+[ext_resource type="FontFile" uid="uid://c1k06ru7rfnnv" path="res://recursos/font/ThaleahFat/ThaleahFat.ttf" id="1_mpws7"]
+[ext_resource type="Texture2D" uid="uid://bi4lwxcbmegmc" path="res://recursos/teclas/arriba.png" id="2_fgwlt"]
+[ext_resource type="Texture2D" uid="uid://bu7x4pkar1o80" path="res://recursos/teclas/left.png" id="3_ltrx2"]
+[ext_resource type="Texture2D" uid="uid://dowrn1nh5xnbc" path="res://recursos/teclas/derecha.png" id="4_ndi4j"]
+[ext_resource type="Texture2D" uid="uid://c0xhisu1cthja" path="res://recursos/teclas/P.png" id="5_ulmf1"]
+
+[node name="Instrucciones" type="Control" unique_id=947635618]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=259835428]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 40.0
+offset_right = 284.0
+offset_bottom = 94.0
+theme_override_fonts/normal_font = ExtResource("1_mpws7")
+theme_override_font_sizes/normal_font_size = 48
+text = "JUMP"
+
+[node name="Arriba" type="Sprite2D" parent="." unique_id=524834688]
+position = Vector2(98.00001, 60.999996)
+scale = Vector2(3.8333335, 3.3958335)
+texture = ExtResource("2_fgwlt")
+
+[node name="Left" type="Sprite2D" parent="." unique_id=890848122]
+position = Vector2(318, 64.00001)
+scale = Vector2(5, 3.6666667)
+texture = ExtResource("3_ltrx2")
+
+[node name="Derecha" type="Sprite2D" parent="." unique_id=1678017744]
+position = Vector2(410.00003, 63.999996)
+scale = Vector2(5.333333, 3.787917)
+texture = ExtResource("4_ndi4j")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="." unique_id=1852861510]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 43.0
+offset_right = 616.0
+offset_bottom = 97.0
+theme_override_fonts/normal_font = ExtResource("1_mpws7")
+theme_override_font_sizes/normal_font_size = 48
+text = "run"
+
+[node name="P" type="Sprite2D" parent="." unique_id=983737464]
+position = Vector2(633, 64)
+scale = Vector2(3.2291696, 2.770833)
+texture = ExtResource("5_ulmf1")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="." unique_id=658704102]
+layout_mode = 0
+offset_left = 677.0
+offset_top = 43.0
+offset_right = 809.0
+offset_bottom = 97.0
+theme_override_fonts/normal_font = ExtResource("1_mpws7")
+theme_override_font_sizes/normal_font_size = 48
+text = "PAUSE"

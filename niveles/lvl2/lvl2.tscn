@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cvqt1fprh2xy0" path="res://ui/finishLevel.tscn" id="3_agokq"]
 [ext_resource type="PackedScene" uid="uid://d20i0ykfiqtmn" path="res://ui/menu.tscn" id="3_dpkx8"]
 [ext_resource type="PackedScene" uid="uid://bp8r6m83vg1px" path="res://components/goal.tscn" id="4_s77dw"]
+[ext_resource type="PackedScene" uid="uid://c6fubklstogc7" path="res://ui/instrucciones.tscn" id="6_ru0q3"]
 [ext_resource type="PackedScene" uid="uid://bfb1b212nnm7h" path="res://personajes/mushroom/mushroom.tscn" id="7_0y5v8"]
 [ext_resource type="PackedScene" uid="uid://ci4ah07xdpmjj" path="res://personajes/malo_movil/malo_mobil.tscn" id="8_ru0q3"]
 
@@ -22,6 +23,8 @@ layer = 100
 [node name="FinishLevel" parent="CanvasLayer" unique_id=1740256581 instance=ExtResource("3_agokq")]
 
 [node name="Menu" parent="CanvasLayer" unique_id=2013318149 instance=ExtResource("3_dpkx8")]
+
+[node name="Instrucciones" parent="CanvasLayer" unique_id=947635618 instance=ExtResource("6_ru0q3")]
 
 [node name="goal" parent="." unique_id=1423187210 instance=ExtResource("4_s77dw")]
 position = Vector2(4016, -134)

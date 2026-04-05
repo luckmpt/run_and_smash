@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bfb1b212nnm7h" path="res://personajes/mushroom/mushroom.tscn" id="5_wogk7"]
 [ext_resource type="PackedScene" uid="uid://bp8r6m83vg1px" path="res://components/goal.tscn" id="6_g7j2r"]
 [ext_resource type="PackedScene" uid="uid://cvqt1fprh2xy0" path="res://ui/finishLevel.tscn" id="6_gy5b8"]
+[ext_resource type="PackedScene" uid="uid://c6fubklstogc7" path="res://ui/instrucciones.tscn" id="8_4yds5"]
 
 [node name="Lvl1" type="Node2D" unique_id=696258727]
 script = ExtResource("1_s8t8u")
@@ -28,6 +29,8 @@ layer = 100
 [node name="Menu" parent="CanvasLayer" unique_id=2013318149 instance=ExtResource("4_g7j2r")]
 
 [node name="FinishLevel" parent="CanvasLayer" unique_id=1740256581 instance=ExtResource("6_gy5b8")]
+
+[node name="Instrucciones" parent="CanvasLayer" unique_id=947635618 instance=ExtResource("8_4yds5")]
 
 [node name="goal" parent="." unique_id=1423187210 instance=ExtResource("6_g7j2r")]
 position = Vector2(4014, -125)
