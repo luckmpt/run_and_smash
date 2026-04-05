@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://cvqt1fprh2xy0"]
+
+[ext_resource type="Script" uid="uid://dbf7wkhvrls66" path="res://ui/finish_level.gd" id="1_7slxp"]
+[ext_resource type="FontFile" uid="uid://c1k06ru7rfnnv" path="res://recursos/font/ThaleahFat/ThaleahFat.ttf" id="2_7slxp"]
+
+[sub_resource type="Theme" id="Theme_67ixo"]
+default_font = ExtResource("2_7slxp")
+default_font_size = 32
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
+
+[node name="FinishLevel" type="Control" unique_id=1740256581]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7slxp")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1804512960]
+layout_mode = 0
+offset_left = 417.0
+offset_top = 153.0
+offset_right = 810.0
+offset_bottom = 470.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=947969230]
+layout_mode = 2
+theme = SubResource("Theme_67ixo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1936209196]
+layout_mode = 2
+
+[node name="titulo" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1613953959]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 63
+text = "FELICITACIONES"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1778588624]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1590053486]
+layout_mode = 2
+
+[node name="Siguiente" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1081856345]
+unique_name_in_owner = true
+layout_mode = 2
+text = "SIGUIENTE	"
+
+[node name="Reiniciar" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1153946297]
+unique_name_in_owner = true
+layout_mode = 2
+text = "REINICIAR"
+
+[node name="Salir" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=273341769]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Salir"

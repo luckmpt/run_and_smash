@@ -1,10 +1,99 @@
 [gd_scene format=3 uid="uid://dn4atce4qisg"]
 
+[ext_resource type="Script" uid="uid://62h0b5q0lt7n" path="res://niveles/lvl3/lvl_3.gd" id="1_carij"]
 [ext_resource type="PackedScene" uid="uid://bkso5o288e3hl" path="res://niveles/lvl3/espacio_lvl3.tscn" id="1_u4ydn"]
-[ext_resource type="PackedScene" uid="uid://cp0gncmr6k0x" path="res://personajes/steve.tscn" id="2_w75py"]
+[ext_resource type="PackedScene" uid="uid://cp0gncmr6k0x" path="res://personajes/steve/steve.tscn" id="2_w75py"]
+[ext_resource type="PackedScene" uid="uid://d20i0ykfiqtmn" path="res://ui/menu.tscn" id="3_mopuj"]
+[ext_resource type="PackedScene" uid="uid://cvqt1fprh2xy0" path="res://ui/finishLevel.tscn" id="4_0xnk6"]
+[ext_resource type="PackedScene" uid="uid://bp8r6m83vg1px" path="res://components/goal.tscn" id="4_2qtej"]
+[ext_resource type="PackedScene" uid="uid://bfb1b212nnm7h" path="res://personajes/mushroom/mushroom.tscn" id="7_6gkm3"]
+[ext_resource type="PackedScene" uid="uid://ci4ah07xdpmjj" path="res://personajes/malo_movil/malo_mobil.tscn" id="8_0nb0i"]
 
-[node name="nivel 1" type="Node2D" unique_id=733802760]
+[node name="nivel 3" type="Node2D" unique_id=733802760]
+script = ExtResource("1_carij")
 
 [node name="espacio" parent="." unique_id=1345446330 instance=ExtResource("1_u4ydn")]
 
 [node name="mario" parent="." unique_id=124790534 instance=ExtResource("2_w75py")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=792921844]
+layer = 100
+
+[node name="Menu" parent="CanvasLayer" unique_id=2013318149 instance=ExtResource("3_mopuj")]
+
+[node name="FinishLevel" parent="CanvasLayer" unique_id=1740256581 instance=ExtResource("4_0xnk6")]
+
+[node name="goal" parent="." unique_id=1423187210 instance=ExtResource("4_2qtej")]
+position = Vector2(12397, -1350)
+
+[node name="mushroom" parent="." unique_id=770371718 instance=ExtResource("7_6gkm3")]
+position = Vector2(1333, -199)
+
+[node name="mushroom2" parent="." unique_id=219276866 instance=ExtResource("7_6gkm3")]
+position = Vector2(1565, -253)
+
+[node name="mushroom3" parent="." unique_id=439654225 instance=ExtResource("7_6gkm3")]
+position = Vector2(1776, -381)
+
+[node name="mushroom4" parent="." unique_id=1798871509 instance=ExtResource("7_6gkm3")]
+position = Vector2(2020, -501)
+
+[node name="duende" parent="." unique_id=1068366592 instance=ExtResource("8_0nb0i")]
+position = Vector2(2485, -523)
+
+[node name="duende2" parent="." unique_id=463742360 instance=ExtResource("8_0nb0i")]
+position = Vector2(2798, -536)
+
+[node name="duende3" parent="." unique_id=1431723801 instance=ExtResource("8_0nb0i")]
+position = Vector2(3084, -523)
+
+[node name="duende4" parent="." unique_id=772333174 instance=ExtResource("8_0nb0i")]
+position = Vector2(3395, -527)
+
+[node name="duende5" parent="." unique_id=94040077 instance=ExtResource("8_0nb0i")]
+position = Vector2(3973, -354)
+
+[node name="duende6" parent="." unique_id=1588306379 instance=ExtResource("8_0nb0i")]
+position = Vector2(4193, -373)
+
+[node name="duende7" parent="." unique_id=201094422 instance=ExtResource("8_0nb0i")]
+position = Vector2(4447, -376)
+
+[node name="duende8" parent="." unique_id=1960851403 instance=ExtResource("8_0nb0i")]
+position = Vector2(4755, -363)
+
+[node name="duende9" parent="." unique_id=1628128422 instance=ExtResource("8_0nb0i")]
+position = Vector2(4896, -351)
+
+[node name="duende10" parent="." unique_id=1956412465 instance=ExtResource("8_0nb0i")]
+position = Vector2(5185, -341)
+
+[node name="duende11" parent="." unique_id=569143057 instance=ExtResource("8_0nb0i")]
+position = Vector2(5295, -351)
+
+[node name="mushroom5" parent="." unique_id=54453267 instance=ExtResource("7_6gkm3")]
+position = Vector2(9160, -1322)
+
+[node name="duende12" parent="." unique_id=1241192085 instance=ExtResource("8_0nb0i")]
+position = Vector2(9454, -1300)
+
+[node name="mushroom6" parent="." unique_id=1134751645 instance=ExtResource("7_6gkm3")]
+position = Vector2(9713, -1346)
+
+[node name="duende13" parent="." unique_id=205638459 instance=ExtResource("8_0nb0i")]
+position = Vector2(10027, -1307)
+
+[node name="mushroom7" parent="." unique_id=526178189 instance=ExtResource("7_6gkm3")]
+position = Vector2(10355, -1343)
+
+[node name="duende14" parent="." unique_id=1447909715 instance=ExtResource("8_0nb0i")]
+position = Vector2(10703, -1317)
+
+[node name="mushroom8" parent="." unique_id=2021169085 instance=ExtResource("7_6gkm3")]
+position = Vector2(11018, -1346)
+
+[node name="duende15" parent="." unique_id=1281293797 instance=ExtResource("8_0nb0i")]
+position = Vector2(11401, -1314)
+
+[node name="mushroom9" parent="." unique_id=211510927 instance=ExtResource("7_6gkm3")]
+position = Vector2(11757, -1360)

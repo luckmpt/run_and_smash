@@ -1,0 +1,193 @@
+[gd_scene format=3 uid="uid://ci4ah07xdpmjj"]
+
+[ext_resource type="Script" uid="uid://d32fk7wobmsn3" path="res://personajes/malo_movil/malo_mobil.gd" id="1_6iyhr"]
+[ext_resource type="Texture2D" uid="uid://ru1ntby4t7hx" path="res://recursos/fotogramas/Hobgoblin/HobgoblinNoOutline/goblinsmasher_run.png" id="2_rrb8u"]
+[ext_resource type="Script" uid="uid://dbwth4yxr0alh" path="res://components/hitbox_component.gd" id="3_iqi0e"]
+[ext_resource type="Script" uid="uid://bqt5xsrlbt87v" path="res://components/hurtbox_component.gd" id="4_w8uqw"]
+[ext_resource type="Texture2D" uid="uid://dvldjf0p437mf" path="res://recursos/fotogramas/Hobgoblin/HobgoblinNoOutline/goblinsmasher_death.png" id="5_dsonb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk4mq"]
+size = Vector2(56, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrb8u"]
+size = Vector2(63, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsonb"]
+size = Vector2(61, 5)
+
+[sub_resource type="Animation" id="Animation_dsonb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivote/GoblinsmasherIdle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_rrb8u")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivote/GoblinsmasherIdle:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivote/GoblinsmasherIdle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_skrno"]
+resource_name = "die"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivote/GoblinsmasherIdle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_dsonb")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivote/GoblinsmasherIdle:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivote/GoblinsmasherIdle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_wk4mq"]
+resource_name = "run"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivote/GoblinsmasherIdle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_rrb8u")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivote/GoblinsmasherIdle:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivote/GoblinsmasherIdle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_skrno"]
+_data = {
+&"RESET": SubResource("Animation_dsonb"),
+&"die": SubResource("Animation_skrno"),
+&"run": SubResource("Animation_wk4mq")
+}
+
+[node name="duende" type="CharacterBody2D" unique_id=1068366592]
+position = Vector2(0, -7)
+script = ExtResource("1_6iyhr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1864354321]
+position = Vector2(0, -15.5)
+shape = SubResource("RectangleShape2D_wk4mq")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1637908104]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_iqi0e")
+metadata/_custom_type_script = "uid://dbwth4yxr0alh"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=72473471]
+position = Vector2(0, -13.5)
+shape = SubResource("RectangleShape2D_rrb8u")
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=879192944]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_w8uqw")
+metadata/_custom_type_script = "uid://bqt5xsrlbt87v"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1864557885]
+position = Vector2(0, -45.5)
+shape = SubResource("RectangleShape2D_dsonb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1392067109]
+libraries/ = SubResource("AnimationLibrary_skrno")
+
+[node name="pivote" type="Node2D" parent="." unique_id=2007577097]
+
+[node name="RayCast2D" type="RayCast2D" parent="pivote" unique_id=1566671061]
+position = Vector2(11, -16)
+target_position = Vector2(21, 0)
+
+[node name="GoblinsmasherIdle" type="Sprite2D" parent="pivote" unique_id=298180745]
+position = Vector2(35, -18)
+rotation = 3.1415927
+scale = Vector2(-4.002, -3.994)
+texture = ExtResource("2_rrb8u")
+hframes = 4
+
+[node name="RayCast2D2" type="RayCast2D" parent="pivote" unique_id=898370741]
+position = Vector2(37, -7)
+target_position = Vector2(0, 28)

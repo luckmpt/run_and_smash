@@ -1,10 +1,51 @@
 [gd_scene format=3 uid="uid://bf64dq0x1u2lm"]
 
+[ext_resource type="Script" uid="uid://cbkqvcrdmp88h" path="res://niveles/lvl2/lvl_2.gd" id="1_jqe1t"]
 [ext_resource type="PackedScene" uid="uid://bkv761aehknyo" path="res://niveles/lvl2/espacio_lvl2.tscn" id="1_kg0ae"]
-[ext_resource type="PackedScene" uid="uid://cp0gncmr6k0x" path="res://personajes/steve.tscn" id="2_76dps"]
+[ext_resource type="PackedScene" uid="uid://cp0gncmr6k0x" path="res://personajes/steve/steve.tscn" id="2_76dps"]
+[ext_resource type="PackedScene" uid="uid://cvqt1fprh2xy0" path="res://ui/finishLevel.tscn" id="3_agokq"]
+[ext_resource type="PackedScene" uid="uid://d20i0ykfiqtmn" path="res://ui/menu.tscn" id="3_dpkx8"]
+[ext_resource type="PackedScene" uid="uid://bp8r6m83vg1px" path="res://components/goal.tscn" id="4_s77dw"]
+[ext_resource type="PackedScene" uid="uid://bfb1b212nnm7h" path="res://personajes/mushroom/mushroom.tscn" id="7_0y5v8"]
+[ext_resource type="PackedScene" uid="uid://ci4ah07xdpmjj" path="res://personajes/malo_movil/malo_mobil.tscn" id="8_ru0q3"]
 
 [node name="Lvl2" type="Node2D" unique_id=2095497486]
+script = ExtResource("1_jqe1t")
 
 [node name="EspacioLvl2" parent="." unique_id=33575575 instance=ExtResource("1_kg0ae")]
 
 [node name="mario" parent="." unique_id=124790534 instance=ExtResource("2_76dps")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=125375249]
+layer = 100
+
+[node name="FinishLevel" parent="CanvasLayer" unique_id=1740256581 instance=ExtResource("3_agokq")]
+
+[node name="Menu" parent="CanvasLayer" unique_id=2013318149 instance=ExtResource("3_dpkx8")]
+
+[node name="goal" parent="." unique_id=1423187210 instance=ExtResource("4_s77dw")]
+position = Vector2(4016, -134)
+
+[node name="mushroom" parent="." unique_id=770371718 instance=ExtResource("7_0y5v8")]
+position = Vector2(1748, -244)
+
+[node name="duende" parent="." unique_id=1068366592 instance=ExtResource("8_ru0q3")]
+position = Vector2(1439, -206)
+
+[node name="duende2" parent="." unique_id=135863429 instance=ExtResource("8_ru0q3")]
+position = Vector2(2022, -208)
+
+[node name="duende3" parent="." unique_id=838016309 instance=ExtResource("8_ru0q3")]
+position = Vector2(2518, -17)
+
+[node name="duende4" parent="." unique_id=1098927976 instance=ExtResource("8_ru0q3")]
+position = Vector2(2893, -17)
+
+[node name="duende5" parent="." unique_id=660324147 instance=ExtResource("8_ru0q3")]
+position = Vector2(3221, -21)
+
+[node name="duende6" parent="." unique_id=1531379576 instance=ExtResource("8_ru0q3")]
+position = Vector2(3552, -17)
+
+[node name="duende7" parent="." unique_id=73882577 instance=ExtResource("8_ru0q3")]
+position = Vector2(3830, -15)

@@ -10,14 +10,13 @@ config_version=5
 
 [application]
 
-config/name="minecraft_run"
+config/name="run_and_smash"
 run/main_scene="uid://dvdwa466ohr1f"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://recursos/texturas/icon.svg"
 
-[gui]
+[autoload]
 
-theme/custom="uid://dfn1sqi2tbagi"
+LevelManager="*uid://bye630h7fme6q"
 
 [input]
 

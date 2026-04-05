@@ -1,0 +1,336 @@
+[gd_scene format=3 uid="uid://cp0gncmr6k0x"]
+
+[ext_resource type="Script" uid="uid://c0rneglwop4o3" path="res://personajes/steve/steve.gd" id="1_e1nyq"]
+[ext_resource type="Texture2D" uid="uid://djad5gkglptk6" path="res://recursos/fotogramas/NoobSprite.png" id="2_e1nyq"]
+[ext_resource type="Script" uid="uid://dbwth4yxr0alh" path="res://components/hitbox_component.gd" id="4_0sfy4"]
+[ext_resource type="Script" uid="uid://bqt5xsrlbt87v" path="res://components/hurtbox_component.gd" id="4_qsbem"]
+[ext_resource type="AudioStream" uid="uid://bkqlol4cj73u8" path="res://recursos/sonido/jumping1.mp3" id="5_c8fua"]
+[ext_resource type="AudioStream" uid="uid://bi851051uaqpb" path="res://recursos/sonido/jumping2.mp3" id="6_fg04v"]
+[ext_resource type="AudioStream" uid="uid://c6iyjkipqs2hw" path="res://recursos/sonido/win.mp3" id="7_fg04v"]
+[ext_resource type="AudioStream" uid="uid://dum0njelncbkr" path="res://recursos/sonido/starostin-comedy-cartoon-funny-background-music-492540.mp3" id="8_axtaj"]
+[ext_resource type="AudioStream" uid="uid://8sik0whqahvq" path="res://recursos/sonido/smash.mp3" id="9_teh75"]
+[ext_resource type="AudioStream" uid="uid://bc8a8wsgwirfx" path="res://recursos/sonido/lose.mp3" id="10_l6swh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_snave"]
+radius = 27.0
+height = 82.0
+
+[sub_resource type="Animation" id="Animation_2g6vc"]
+resource_name = "Idle"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_1c8g4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(12, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1ovay"]
+resource_name = "death"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [23, 24, 25, 26, 27]
+}
+
+[sub_resource type="Animation" id="Animation_5e8we"]
+resource_name = "death_in_air"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [28, 29, 30, 31, 32, 33]
+}
+
+[sub_resource type="Animation" id="Animation_yq6hh"]
+resource_name = "double_jump"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [34, 35, 36]
+}
+
+[sub_resource type="Animation" id="Animation_wetu6"]
+resource_name = "fall"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(19, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ikxju"]
+resource_name = "fly"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(20, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_dtlli"]
+resource_name = "new_animation_2"
+length = 0.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [21, 22]
+}
+
+[sub_resource type="Animation" id="Animation_5ugv7"]
+resource_name = "new_animation"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(18, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_a3bya"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(12, 0), Vector2i(13, 0), Vector2i(14, 0), Vector2i(15, 0), Vector2i(16, 0), Vector2i(17, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_em8oh"]
+resource_name = "sit"
+length = 0.3
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_bt26u"]
+resource_name = "wall_slide"
+length = 0.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D/pivote/NoobSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [37, 38]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ne4u3"]
+_data = {
+&"Idle": SubResource("Animation_2g6vc"),
+&"RESET": SubResource("Animation_1c8g4"),
+&"death": SubResource("Animation_1ovay"),
+&"death_in_air": SubResource("Animation_5e8we"),
+&"double_jump": SubResource("Animation_yq6hh"),
+&"fall": SubResource("Animation_wetu6"),
+&"fly": SubResource("Animation_ikxju"),
+&"hit": SubResource("Animation_dtlli"),
+&"jump": SubResource("Animation_5ugv7"),
+&"run": SubResource("Animation_a3bya"),
+&"sit": SubResource("Animation_em8oh"),
+&"wall_slide": SubResource("Animation_bt26u")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onp27"]
+size = Vector2(52, 6.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0sfy4"]
+size = Vector2(62, 78)
+
+[node name="steve" type="CharacterBody2D" unique_id=305796880]
+position = Vector2(266, -40)
+script = ExtResource("1_e1nyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1837038140]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_snave")
+
+[node name="pivote" type="Node2D" parent="CollisionShape2D" unique_id=1390678109]
+position = Vector2(0, -5)
+
+[node name="NoobSprite" type="Sprite2D" parent="CollisionShape2D/pivote" unique_id=1909826855]
+scale = Vector2(5.15, 5.15)
+texture = ExtResource("2_e1nyq")
+hframes = 39
+frame = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1997451076]
+libraries/ = SubResource("AnimationLibrary_ne4u3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2117994652]
+position = Vector2(310, -106)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=1429683569]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("4_0sfy4")
+metadata/_custom_type_script = "uid://dbwth4yxr0alh"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=3859911]
+position = Vector2(0, 39.75)
+shape = SubResource("RectangleShape2D_onp27")
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=245231980]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("4_qsbem")
+metadata/_custom_type_script = "uid://bqt5xsrlbt87v"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=993688701]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_0sfy4")
+
+[node name="jumpTimer" type="Timer" parent="." unique_id=596011120]
+wait_time = 0.2
+one_shot = true
+
+[node name="coyoteTimer" type="Timer" parent="." unique_id=1084394717]
+wait_time = 0.2
+one_shot = true
+
+[node name="jumping1" type="AudioStreamPlayer" parent="." unique_id=329188442]
+stream = ExtResource("5_c8fua")
+
+[node name="jumping2" type="AudioStreamPlayer" parent="." unique_id=1425027022]
+stream = ExtResource("6_fg04v")
+volume_db = 10.0
+
+[node name="win" type="AudioStreamPlayer" parent="." unique_id=537318061]
+stream = ExtResource("7_fg04v")
+
+[node name="background" type="AudioStreamPlayer" parent="." unique_id=1234184275]
+stream = ExtResource("8_axtaj")
+volume_db = -7.0
+autoplay = true
+
+[node name="Smash" type="AudioStreamPlayer" parent="." unique_id=1627398491]
+stream = ExtResource("9_teh75")
+volume_db = 24.0
+
+[node name="Lose" type="AudioStreamPlayer" parent="." unique_id=344386997]
+stream = ExtResource("10_l6swh")
+volume_db = -7.0

@@ -1,25 +1,33 @@
 extends Node2D
 
-var button1
-var button2
-var button3
+@onready var level_1: Button = %level1
+@onready var level_2: Button = %level2
+@onready var level_3: Button = %level3
+@onready var salir: Button = %Salir
+@onready var creditos: Button = %Creditos
+
 
 func _ready() -> void:
-	button1 = $Fondo/Panel/Button1
-	button1.pressed.connect(_on_pressed_B1)
-	button2 = $Fondo/Panel/Button2
-	button2.pressed.connect(_on_pressed_B2)
-	button3 = $Fondo/Panel/Button3
-	button3.pressed.connect(_on_pressed_B3)
+	level_1.pressed.connect(_on_pressed_l1)
+	level_2.pressed.connect(_on_pressed_l2)
+	level_3.pressed.connect(_on_pressed_l3)
+	salir.pressed.connect(_on_pressed_salir)
+	creditos.pressed.connect(_on_pressed_creditos)
 
 func _process(delta: float) -> void:
 	pass
 	
-func _on_pressed_B1():
-	get_tree().change_scene_to_file("res://niveles/lvl1/lvl1.tscn")
+func _on_pressed_l1():
+	LevelManager.ir_a_nivel(1)
 
-func _on_pressed_B2():
-	get_tree().change_scene_to_file("res://niveles/lvl2/lvl2.tscn")
+func _on_pressed_l2():
+	LevelManager.ir_a_nivel(2)
 
-func _on_pressed_B3():
-	get_tree().change_scene_to_file("res://niveles/lvl3/lvl3.tscn")
+func _on_pressed_l3():
+	LevelManager.ir_a_nivel(3)
+
+func _on_pressed_salir():
+	LevelManager.salir()
+
+func _on_pressed_creditos():
+	LevelManager.credits()

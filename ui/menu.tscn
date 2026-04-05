@@ -1,44 +1,71 @@
-[gd_scene format=3 uid="uid://cfcf6r3i6vw1g"]
+[gd_scene format=3 uid="uid://d20i0ykfiqtmn"]
 
-[ext_resource type="Script" uid="uid://dpbia3eiwunde" path="res://ui/menu.gd" id="1_ouk20"]
-[ext_resource type="Theme" uid="uid://dfn1sqi2tbagi" path="res://recursos/new_theme.tres" id="2_ouk20"]
+[ext_resource type="Script" uid="uid://cvhdlq3xybijr" path="res://ui/menu.gd" id="1_udkah"]
+[ext_resource type="FontFile" uid="uid://c1k06ru7rfnnv" path="res://recursos/font/ThaleahFat/ThaleahFat.ttf" id="2_udkah"]
 
-[node name="menu" type="Node2D" unique_id=923017413]
-script = ExtResource("1_ouk20")
+[sub_resource type="Theme" id="Theme_67ixo"]
+default_font = ExtResource("2_udkah")
+default_font_size = 32
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 20
+MarginContainer/constants/margin_right = 20
+MarginContainer/constants/margin_top = 20
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=966803190]
+[node name="Menu" type="Control" unique_id=2013318149]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_udkah")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=656248694]
+layout_mode = 0
 offset_left = 417.0
 offset_top = 153.0
 offset_right = 810.0
-offset_bottom = 390.0
+offset_bottom = 470.0
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1990846882]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=819774902]
 layout_mode = 2
-theme = ExtResource("2_ouk20")
+theme = SubResource("Theme_67ixo")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=15050446]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1013556700]
 layout_mode = 2
 
-[node name="titulo" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1313008964]
+[node name="titulo" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1529368852]
 layout_mode = 2
-theme_override_font_sizes/font_size = 42
-text = "MENU"
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 63
+text = "PAUSA"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=714715716]
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1489665691]
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=2006973139]
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=412980884]
 layout_mode = 2
 
-[node name="reanudar" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1202525754]
+[node name="Reanudar" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=960580187]
+unique_name_in_owner = true
 layout_mode = 2
 text = "REANUDAR"
 
-[node name="reiniciar" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1485539790]
+[node name="Reiniciar" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=936370603]
+unique_name_in_owner = true
 layout_mode = 2
 text = "REINICIAR"
 
-[node name="niveles" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1328462070]
+[node name="Menu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1178699603]
+unique_name_in_owner = true
 layout_mode = 2
-text = "NIVELES"
+text = "Volver Menu"
+
+[node name="Salir" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1770483348]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Salir"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Reanudar" to="." method="_on_reanudar_pressed"]

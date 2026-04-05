@@ -1,0 +1,182 @@
+[gd_scene format=3 uid="uid://bfb1b212nnm7h"]
+
+[ext_resource type="Script" uid="uid://dy62pbk6weo4p" path="res://personajes/mushroom/mushroom.gd" id="1_llrhw"]
+[ext_resource type="Texture2D" uid="uid://csfdlfpd43msv" path="res://recursos/fotogramas/Forest_Monsters_FREE/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Idle.png" id="2_tuhce"]
+[ext_resource type="Script" uid="uid://bqt5xsrlbt87v" path="res://components/hurtbox_component.gd" id="3_bshml"]
+[ext_resource type="Texture2D" uid="uid://b5p83td2rid31" path="res://recursos/fotogramas/Forest_Monsters_FREE/Forest_Monsters_FREE/Mushroom/Mushroom with VFX/Mushroom-Die.png" id="3_tuhce"]
+[ext_resource type="Script" uid="uid://dbwth4yxr0alh" path="res://components/hitbox_component.gd" id="4_edfxb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhurq"]
+size = Vector2(56, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5ovs"]
+size = Vector2(56.5, 4.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6x4cg"]
+size = Vector2(60, 61)
+
+[sub_resource type="Animation" id="Animation_llrhw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MushroomIdle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_tuhce")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MushroomIdle:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MushroomIdle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bshml"]
+resource_name = "die"
+length = 1.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MushroomIdle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_tuhce")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MushroomIdle:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MushroomIdle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+
+[sub_resource type="Animation" id="Animation_tuhce"]
+resource_name = "idle"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MushroomIdle:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_tuhce")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MushroomIdle:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MushroomIdle:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bshml"]
+_data = {
+&"RESET": SubResource("Animation_llrhw"),
+&"die": SubResource("Animation_bshml"),
+&"idle": SubResource("Animation_tuhce")
+}
+
+[node name="mushroom" type="CharacterBody2D" unique_id=770371718]
+position = Vector2(0, -50)
+script = ExtResource("1_llrhw")
+
+[node name="MushroomIdle" type="Sprite2D" parent="." unique_id=401271643]
+position = Vector2(3, -11.999992)
+scale = Vector2(2, 2)
+texture = ExtResource("2_tuhce")
+hframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1770312899]
+position = Vector2(2, 20.5)
+shape = SubResource("RectangleShape2D_nhurq")
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=123111391]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_bshml")
+metadata/_custom_type_script = "uid://bqt5xsrlbt87v"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1467193501]
+position = Vector2(2.75, -11.75)
+shape = SubResource("RectangleShape2D_m5ovs")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=29774929]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("4_edfxb")
+metadata/_custom_type_script = "uid://dbwth4yxr0alh"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1885970947]
+position = Vector2(2, 21.5)
+shape = SubResource("RectangleShape2D_6x4cg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=214007291]
+libraries/ = SubResource("AnimationLibrary_bshml")
