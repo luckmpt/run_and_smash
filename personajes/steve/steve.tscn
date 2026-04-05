@@ -285,8 +285,8 @@ position_smoothing_enabled = true
 position_smoothing_speed = 1.0
 
 [node name="HitboxComponent" type="Area2D" parent="." unique_id=1429683569]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 6
+collision_mask = 6
 script = ExtResource("4_0sfy4")
 metadata/_custom_type_script = "uid://dbwth4yxr0alh"
 
@@ -295,8 +295,8 @@ position = Vector2(0, 39.75)
 shape = SubResource("RectangleShape2D_onp27")
 
 [node name="HurtboxComponent" type="Area2D" parent="." unique_id=245231980]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 6
+collision_mask = 6
 script = ExtResource("4_qsbem")
 metadata/_custom_type_script = "uid://bqt5xsrlbt87v"
 

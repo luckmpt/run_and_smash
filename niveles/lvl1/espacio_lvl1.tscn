@@ -181,6 +181,8 @@ tile_map_data = PackedByteArray("AADp//T/AAAEAAoAAADp//X/AAAEAAoAAADp//b/AAAEAAo
 tile_set = SubResource("TileSet_tlrif")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=375715036]
+collision_layer = 15
+collision_mask = 15
 
 [node name="borde_izquierdo" type="CollisionShape2D" parent="StaticBody2D" unique_id=140415416]
 shape = SubResource("WorldBoundaryShape2D_eii44")

@@ -146,6 +146,8 @@ _data = {
 
 [node name="duende" type="CharacterBody2D" unique_id=1068366592]
 position = Vector2(0, -7)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_6iyhr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1864354321]
@@ -180,6 +182,7 @@ libraries/ = SubResource("AnimationLibrary_skrno")
 [node name="RayCast2D" type="RayCast2D" parent="pivote" unique_id=1566671061]
 position = Vector2(11, -16)
 target_position = Vector2(21, 0)
+collision_mask = 15
 
 [node name="GoblinsmasherIdle" type="Sprite2D" parent="pivote" unique_id=298180745]
 position = Vector2(35, -18)
@@ -191,3 +194,4 @@ hframes = 4
 [node name="RayCast2D2" type="RayCast2D" parent="pivote" unique_id=898370741]
 position = Vector2(37, -7)
 target_position = Vector2(0, 28)
+collision_mask = 15

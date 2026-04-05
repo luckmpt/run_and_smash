@@ -212,6 +212,8 @@ tile_map_data = PackedByteArray("AABaAAIAAAABAAIAAABaAAEAAAABAAEAAABaAAAAAAABAAE
 tile_set = SubResource("TileSet_ru2ke")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1838705738]
+collision_layer = 15
+collision_mask = 15
 
 [node name="suelo" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1963113562]
 position = Vector2(3371, 117)

@@ -146,6 +146,8 @@ _data = {
 
 [node name="mushroom" type="CharacterBody2D" unique_id=770371718]
 position = Vector2(0, -50)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_llrhw")
 
 [node name="MushroomIdle" type="Sprite2D" parent="." unique_id=401271643]
